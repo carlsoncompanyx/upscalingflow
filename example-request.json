@@ -1,0 +1,70 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "model_name": "RealESRGAN_x4plus.pth"
+        },
+        "class_type": "UpscaleModelLoader",
+        "_meta": {
+          "title": "UpscaleModelLoader"
+        }
+      },
+      "2": {
+        "inputs": {
+          "upscale_model": [
+            "1",
+            0
+          ],
+          "image": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "ImageUpscaleWithModel",
+        "_meta": {
+          "title": "ImageUpscaleWithModel"
+        }
+      },
+      "4": {
+        "inputs": {
+          "filename_prefix": "",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "5": {
+        "inputs": {
+          "image": "undefined"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "8": {
+        "inputs": {
+          "value": 4,
+          "image": [
+            "2",
+            0
+          ],
+          "upscale_model": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "UltimateSDUpscale",
+        "_meta": {
+          "title": "UltimateSDUpscale"
+        }
+      }
+    }
+  }
+}

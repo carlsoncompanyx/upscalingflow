@@ -2,8 +2,7 @@
 FROM runpod/worker-comfyui:5.5.0-base
 
 # install Ultimate SD Upscale custom node
-RUN cd /comfyui/custom_nodes && \
-    git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
+RUN comfy node install ssitu/ComfyUI_UltimateSDUpscale
 
 
 # download models into comfyui

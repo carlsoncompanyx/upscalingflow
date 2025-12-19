@@ -13,5 +13,10 @@ RUN mkdir -p /comfyui/custom_nodes && \
 # download models into comfyui
 RUN comfy model download --url https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth --relative-path models/upscale_models --filename RealESRGAN_x4plus.pth
 
+# SDXL (for SD refine)
+RUN mkdir -p /comfyui/models/checkpoints && \
+    curl -L https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors \
+    -o /comfyui/models/checkpoints/sd_xl_base_1.0.safetensors
+
 # copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
 # COPY input/ /comfyui/input/

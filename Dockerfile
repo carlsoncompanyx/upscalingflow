@@ -3,6 +3,9 @@ FROM runpod/worker-comfyui:5.5.0-base
 # install curl + unzip (safe, deterministic)
 RUN apt-get update && apt-get install -y curl unzip
 
+# copy ComfyUI workflow into the container
+COPY upscale_flow.json /comfyui/workflows/upscale_flow.json
+
 # install Ultimate SD Upscale via ZIP (NO git)
 RUN mkdir -p /comfyui/custom_nodes && \
     curl -L https://github.com/ssitu/ComfyUI_UltimateSDUpscale/archive/refs/heads/main.zip -o /tmp/ultimate.zip && \

@@ -37,15 +37,15 @@
       "title": "Save Image"
     }
   },
-  "5": {
-    "inputs": {
-      "image": "undefined"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Load Image"
-    }
+"5": {
+  "inputs": {
+    "image": "input.png"
   },
+  "class_type": "LoadImage",
+  "_meta": {
+    "title": "Load Image"
+  }
+},  
   "8": {
     "inputs": {
       "upscale_by": 4,
